@@ -15,3 +15,6 @@ lottery_e = random.randint(1, 50)
 print(lottery_a, lottery_b, lottery_c, lottery_d, lottery_e)
 
 print(exportedModule.pi) #Imported the Variable from another file.
+
+love_score = random.randint(1, 100)
+print(f"Your Love Score Is.. {love_score}")
