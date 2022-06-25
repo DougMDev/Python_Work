@@ -1,10 +1,6 @@
 #Step 1 
-from pickle import FALSE
 import random
 word_list = ["aardvark", "baboon", "camel"]
-
-# rand_int = random.randint(0, 2)
-# rand_word = word_list[rand_int]
 rand_word = random.choice(word_list)
 word_len = len(rand_word)
 
@@ -12,14 +8,13 @@ word_len = len(rand_word)
 print(f'Pssst, the solution is {rand_word}.')
 
 display = []
-for letter in rand_word:
-    display.append("_")
-print(display)
+for _ in range(word_len):
+    display += "_"
 
 end_of_game = False
 
 while not end_of_game:
-    guess = input("Guess a Letter! ").lower()
+    guess = input("Guess a Letter!: ").lower()
 
     #Check guessed letter
     for position in range(word_len):
@@ -29,6 +24,6 @@ while not end_of_game:
 
     print(display)
 
-if "_" not in display:
-    end_of_game = True
-    print("You WIN!!!")
+    if "_" not in display:
+        end_of_game = True
+        print("YOU WIN!!!")
