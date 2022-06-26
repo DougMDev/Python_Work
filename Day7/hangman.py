@@ -1,65 +1,9 @@
 #Step 1 
 import random
+import hangman_displays
+import hangman_wordlist
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-word_list = ["aardvark", "baboon", "camel"]
-rand_word = random.choice(word_list)
+rand_word = random.choice(hangman_wordlist.word_list)
 word_len = len(rand_word)
 
 lives = 6
@@ -72,6 +16,8 @@ for _ in range(word_len):
 
 end_of_game = False
 
+print(hangman_displays.logo)
+
 while not end_of_game:
     guess = input("Guess a Letter!: ").lower()
 
@@ -83,7 +29,7 @@ while not end_of_game:
 
     if guess not in rand_word:
         lives -= 1
-        print(stages[lives])
+        print(hangman_displays.stages[lives])
         print(f"No Match!! You have {lives} lives left")
         if lives == 0:
             end_of_game = True
