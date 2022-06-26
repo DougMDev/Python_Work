@@ -17,6 +17,7 @@ for _ in range(word_len):
 end_of_game = False
 
 print(hangman_displays.logo)
+print("Welcome to Hangman!!")
 
 while not end_of_game:
     guess = input("Guess a Letter!: ").lower()
