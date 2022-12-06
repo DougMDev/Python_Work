@@ -1,0 +1,4 @@
+Docstrings
+
+"""You can add Docstrings inbetween 3 Speech Marks
+You can also use them in multi-line"""
